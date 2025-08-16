@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  background-color: #f8f9fa; /* Bootstrap light gray background */
+}
+
+.navbar .container {
+  max-width: 1200px; /* leaves horizontal space on large screens */
+}
+
+/* Sidebar styling */
+#sidebar {
+  width: 100%;       /* now takes the full width of col-md-3 */
+  background-color: #ffffff;
+  color: #212529;
+  padding: 20px;
+  border-radius: 10px;
+  position: sticky;   /* keeps it visible while scrolling */
+  top: 20px;          /* offset from top inside container */
+}
+
+#sidebar img {
+  width: 120px;
+  border-radius: 50%;
+}
+
+#sidebar a {
+  color: #0d6efd; /* Bootstrap blue links */
+  text-decoration: none;
+}
+
+#sidebar a:hover {
+  text-decoration: underline;
+}
+
+#main-content {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+#main-content hr {
+  color: black;
+  height: 5px;                   /* thickness of the line */
+  margin: 30px 0; 
+}
+
+/* Keep sidebar hr same as light mode */
+#sidebar hr {
+  color: black; 
+}
+
+/* Default Light Mode (already your normal styles) */
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+  background-color: #1e1e1e !important;
+}
+body.dark-mode .navbar a {
+  color: #e0e0e0 !important;
+}
+
+/* Sidebar */
+body.dark-mode #sidebar {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+body.dark-mode #sidebar a {
+  color: #90caf9; /* light blue links */
+}
+
+/* Main Content */
+body.dark-mode #main-content {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff;
+}
+
+/* Horizontal Line */
+body.dark-mode hr {
+  border-color: #444;
+}

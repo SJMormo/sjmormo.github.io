@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SJMormo | Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/index.css" rel="stylesheet">
+  </head>
+
+  <body class="">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">SJMormo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about-section">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education-section">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research-section">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects-section">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills-section">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cv-section">CV</a></li>
+                    <button id="theme-toggle" class="nav-link">🌙</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 1200px; margin-top: 80px;"> <!-- leave space for navbar -->
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div id="sidebar">
+                    <!-- sidebar content here -->
+                    <div id="sidebar" class="d-flex flex-column align-items-center text-center p-3">
+                    <img src="assets/images/profile.jpeg" alt="Profile Picture" class="mb-3">
+                    <h5>Samver Jahan Mormo</h5>
+                    <p class="small">Software Engineer @ Shanghai BDCOM</p>
+                    <hr class="w-100">
+                    <ul class="list-unstyled text-start w-100">
+                    <li><strong>🏢 Workplace:</strong> Shanghai BDCOM</li>
+                    <li><strong>📍 Location:</strong> Dhaka, Bangladesh</li>
+                    <li><strong>📧 Email:</strong> <a href="mailto:sjmormo91097@gmail.com">sjmormo91097@gmail.com</a></li>
+                    </ul>
+                    <hr class="w-100">
+                        <div class="d-flex flex-column gap-2 w-100 text-start">
+                            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">🔗 LinkedIn</a>
+                            <a href="https://github.com/yourgithub" target="_blank">💻 GitHub</a>
+                            <a href="https://scholar.google.com/citations?user=yourID" target="_blank">📚 Google Scholar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <main id="main-content">
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <script>
+        const pages = [
+            'about/about.html',
+            'education/education.html',
+            'research/research.html',
+            'projects/projects.html',
+            'skills/skills.html',
+            'cv/cv.html'
+        ];
+
+        function loadAllPages() {
+            const mainContent = document.getElementById("main-content");
+            mainContent.innerHTML = ""; // Clear existing content
+
+            pages.forEach(page => {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                // Append each section at the end
+                    const sectionDiv = document.createElement("div");
+                    sectionDiv.innerHTML = data;
+                    mainContent.appendChild(sectionDiv);
+                })
+                .catch(error => {
+                    const errorDiv = document.createElement("div");
+                    errorDiv.innerHTML = "<p class='text-danger'>Failed to load " + page + "</p>";
+                    mainContent.appendChild(errorDiv);
+                    console.error(error);
+                });
+        });
+    }
+
+    // Load all sections on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        loadAllPages();
+    });
+
+    document.getElementById("theme-toggle").addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+        
+        // Change button text & style
+        if (document.body.classList.contains("dark-mode")) 
+        {
+            this.textContent = "☀️";
+            this.classList.remove("btn-outline-dark");
+            this.classList.add("btn-outline-light");
+        } 
+        else 
+        {
+            this.textContent = "🌙";
+            this.classList.remove("btn-outline-light");
+            this.classList.add("btn-outline-dark");
+        }
+    });
+    </script>
+  </body>
+</html>
