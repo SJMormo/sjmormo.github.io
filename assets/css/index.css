@@ -3,8 +3,22 @@ body {
   background-color: #f8f9fa; /* Bootstrap light gray background */
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* adjust to your navbar height */
+}
+
 .navbar .container {
   max-width: 1200px; /* leaves horizontal space on large screens */
+}
+
+.navbar-collapse .nav-item {
+  text-align: center;      /* center the text */
+}
+
+.navbar a:hover, .navbar #theme-toggle:hover {
+  transition: background-color 0.4s ease, transform 0.3s ease;
+  transform: scale(1.1);
 }
 
 /* Sidebar styling */
@@ -92,14 +106,14 @@ body.dark-mode h6 {
 
 /* Horizontal Line */
 body.dark-mode hr {
-  border-color: #444;
+  border-color: #a3a3a3;
 }
 
 #goTopBtn {
   display: none;
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 50px;
+  right: 40px;
   z-index: 99;
   border: none;
   outline: none;
@@ -110,7 +124,7 @@ body.dark-mode hr {
   border-radius: 50%;
   font-size: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.4s ease, transform 0.3s ease;
 }
 
 #goTopBtn:hover {
@@ -122,4 +136,25 @@ body.dark-mode hr {
   pointer-events: none; /* ensures click passes to button */
 }
 
+.footer {
+  position: fixed;       /* always fixed on screen */
+  bottom: 0;             /* stick to bottom */
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  color: #15171a;
+  border-top: 1px solid #dee2e6;
+  z-index: 9999;         /* above other elements */
+}
 
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body.dark-mode .footer {
+  background-color: #1a1a1a;  /* dark background */
+  color: #f1f1f1;             /* light text */
+  border-top: 1px solid #444; /* darker border */
+}
