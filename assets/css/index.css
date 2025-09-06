@@ -42,14 +42,14 @@ html {
   text-decoration: none;
 }
 
-#sidebar a:hover {
-  text-decoration: underline;
-}
-
 #main-content {
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
+}
+
+#main-content a {
+  text-decoration: none;
 }
 
 #main-content hr {
@@ -84,6 +84,7 @@ body.dark-mode #sidebar {
   background-color: #1e1e1e;
   color: #e0e0e0;
 }
+
 body.dark-mode #sidebar a {
   color: #90caf9; /* light blue links */
 }
@@ -91,6 +92,10 @@ body.dark-mode #sidebar a {
 /* Main Content */
 body.dark-mode #main-content {
   background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode #main-content a{
   color: #e0e0e0;
 }
 
