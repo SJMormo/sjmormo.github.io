@@ -97,7 +97,7 @@
 
 
     <!-- Go To Top Button -->
-    <button id="goTopBtn" title="Go to top">
+    <button id="goTopBtn" type="button" title="Go to top" aria-label="Go to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -143,22 +143,16 @@
     </script>
 
     <script>
-        // Show/hide button when scrolling
-        window.onscroll = function() {
-            const btn = document.getElementById("goTopBtn");
-            if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-            }
-        };
+        const goTopBtn = document.getElementById("goTopBtn");
 
-        // Scroll to top when button is clicked
-        document.getElementById("goTopBtn").addEventListener("click", function() {
-            window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-            });
+        // Show the button after scrolling down 800px
+        window.addEventListener("scroll", function () {
+            goTopBtn.classList.toggle("show", window.scrollY > 800);
+        }, { passive: true });
+
+        // Smooth scroll to top
+        goTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
     </script>
 
