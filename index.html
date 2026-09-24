@@ -34,7 +34,14 @@
                     <li class="nav-item"><a class="nav-link" href="#skills-section">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contests-section">Contests</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cv-section">CV</a></li>
-                    <button id="theme-toggle" class="nav-link">☀️</button>
+                    <li class="nav-item d-flex align-items-center justify-content-center ms-lg-2 py-2 py-lg-0">
+                        <button id="theme-toggle" class="theme-switch" type="button"
+                                role="switch" aria-checked="true" aria-label="Toggle dark mode">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-switch-thumb"></span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -136,30 +143,6 @@
     </script>
 
     <script>
-        const navbarToggler = document.getElementById("navbar-toggler-btn");
-
-        document.getElementById("theme-toggle").addEventListener("click", function() {
-            document.body.classList.toggle("dark-mode");
-            
-            // Change button text & style
-            if (document.body.classList.contains("dark-mode")) 
-            {
-                this.textContent = "☀️";
-                this.classList.remove("btn-outline-dark");
-                this.classList.add("btn-outline-light");
-                navbarToggler.innerHTML = '<i class="fas fa-bars" style="color: white;"></i>';
-            } 
-            else 
-            {
-                this.textContent = "🌙";
-                this.classList.remove("btn-outline-light");
-                this.classList.add("btn-outline-dark");
-                navbarToggler.innerHTML = '<span class="navbar-toggler-icon"></span>';
-            }
-        });
-    </script>
-
-    <script>
         // Show/hide button when scrolling
         window.onscroll = function() {
             const btn = document.getElementById("goTopBtn");
@@ -176,6 +159,26 @@
             top: 0,
             behavior: 'smooth'
             });
+        });
+    </script>
+
+    <script>
+        const navbarToggler = document.getElementById("navbar-toggler-btn");
+        const themeBtn = document.getElementById("theme-toggle");
+
+        function syncThemeUI() {
+            const isDark = document.body.classList.contains("dark-mode");
+            themeBtn.setAttribute("aria-checked", isDark);
+            navbarToggler.innerHTML = isDark
+                ? '<i class="fas fa-bars" style="color: white;"></i>'
+                : '<span class="navbar-toggler-icon"></span>';
+        }
+
+        syncThemeUI();
+
+        themeBtn.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+            syncThemeUI();
         });
     </script>
 
