@@ -21,6 +21,17 @@ html {
   transform: scale(1.1);
 }
 
+/* Logo styling */
+#logo-light, #logo-dark {
+  height: 40px;
+  width: auto;
+  display: none;   /* both hidden by default */
+}
+
+#logo-light { display: block; }              /* light mode shows light logo */
+body.dark-mode #logo-dark { display: block; }
+body.dark-mode #logo-light { display: none; }
+
 /* Sidebar styling */
 #sidebar {
   width: 100%;       /* now takes the full width of col-md-3 */
