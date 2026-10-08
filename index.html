@@ -13,16 +13,19 @@
 
     <!-- Custom CSS -->
     <link href="assets/css/index.css" rel="stylesheet">
+
+    <!-- Research CSS -->
+     <link href="assets/css/research.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon.png">
   </head>
 
   <body class="dark-mode">
     <!-- Top Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/images/logo/logo-light.png" alt="SJMormo logo" id="logo-light">
-                <img src="assets/images/logo/logo-dark.png" alt="SJMormo logo" id="logo-dark">
-            </a>
+            <a class="navbar-brand" href="#">SJMormo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" id="navbar-toggler-btn">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -83,21 +86,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <small id="footer-text">
-            © Copyright SJMormo • Last updated: <span id="last-updated"></span>
-            </small>
-        </div>
-    </footer>
-
-    <script>
-    document.getElementById("last-updated").textContent =
-        new Date(document.lastModified).toLocaleDateString();
-    </script>
-
 
     <!-- Go To Top Button -->
     <button id="goTopBtn" type="button" title="Go to top" aria-label="Go to top">

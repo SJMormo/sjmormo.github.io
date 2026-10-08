@@ -125,11 +125,10 @@ body.dark-mode hr {
   border-color: #a3a3a3;
 }
 
-/* Go to Top Button */
 /* Go to top button */
 #goTopBtn {
   position: fixed;
-  bottom: 56px;             /* clears your fixed footer */
+  bottom: 56px;
   right: 32px;
   z-index: 99;
   width: 48px;
@@ -204,29 +203,6 @@ body.dark-mode #goTopBtn:hover {
 
 @media (prefers-reduced-motion: reduce) {
   #goTopBtn, #goTopBtn i { transition: none; }
-}
-
-.footer {
-  position: fixed;       /* always fixed on screen */
-  bottom: 0;             /* stick to bottom */
-  left: 0;
-  width: 100%;
-  background-color: #f8f9fa;
-  color: #15171a;
-  border-top: 1px solid #dee2e6;
-  z-index: 9999;         /* above other elements */
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-body.dark-mode .footer {
-  background-color: #1a1a1a;  /* dark background */
-  color: #f1f1f1;             /* light text */
-  border-top: 1px solid #444; /* darker border */
 }
 
 /* Theme switch */
