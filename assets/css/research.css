@@ -25,21 +25,6 @@
   margin-bottom: 8px;
 }
 
-.research-title {
-  margin: 0 0 8px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.research-title a {
-  color: #15171a;
-  text-decoration: none;
-}
-
-.research-title a:hover {
-  color: #0d6efd;
-}
-
 .research-authors {
   margin: 0 0 4px;
   font-size: 15px;
