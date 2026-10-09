@@ -1,0 +1,64 @@
+.work-card {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-left: 4px solid #0d6efd;
+  border-radius: 10px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.work-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.work-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.work-role {
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.work-company {
+  margin: 0;
+  color: #495057;
+  font-size: 15px;
+}
+
+.work-dates {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0d6efd;
+  background-color: #e7f1ff;
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Dark mode */
+body.dark-mode .work-card {
+  background-color: #1e1e1e;
+  border-color: #333;
+  border-left-color: #3b5bdb;
+}
+
+body.dark-mode .work-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .work-company {
+  color: #c0c0c0;
+}
+
+body.dark-mode .work-dates {
+  background-color: rgba(13, 110, 253, 0.15);
+  color: #90caf9;
+}

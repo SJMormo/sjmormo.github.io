@@ -1,6 +1,7 @@
 .project-card {
   background-color: #ffffff;
   border: 1px solid #e9ecef;
+  border-left: 4px solid #0d6efd;
   border-radius: 12px;
   padding: 24px;
   margin: 0 auto 28px;
@@ -122,6 +123,7 @@
 body.dark-mode .project-card {
   background-color: #1e1e1e;
   border-color: #333;
+  border-left-color: #3b5bdb;
 }
 
 body.dark-mode .project-card:hover {
