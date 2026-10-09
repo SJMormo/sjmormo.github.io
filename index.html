@@ -29,6 +29,12 @@
     <!-- Education CSS -->
     <link href="assets/css/about.css" rel="stylesheet">
 
+    <!-- Skills CSS -->
+    <link href="assets/css/skills.css" rel="stylesheet">
+
+    <!-- Contest CSS -->
+    <link href="assets/css/contest.css" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon/favicon.png">
   </head>
@@ -51,7 +57,6 @@
                     <li class="nav-item"><a class="nav-link" href="#projects-section">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills-section">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contests-section">Contests</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#cv-section">CV</a></li>
                     <li class="nav-item d-flex align-items-center justify-content-center ms-lg-2 py-2 py-lg-0">
                         <button id="theme-toggle" class="theme-switch" type="button"
                                 role="switch" aria-checked="true" aria-label="Toggle dark mode">
@@ -90,6 +95,9 @@
                             <a href="https://scholar.google.com/citations?user=MSeiXLIAAAAJ&hl=en" target="_blank">
                                 <i class="fab fa-google-scholar"></i> Google Scholar
                             </a>
+                            <a href="https://drive.google.com/file/d/1ItQzUk6K_yE2jkvs4nN8mKla6adVfn2r/view?usp=drive_link" target="_blank">
+                                <i class="fas fa-file-pdf"></i> Download CV
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -120,7 +128,6 @@
             'projects/projects.html',
             'skills/skills.html',
             'contest/contest.html',
-            'cv/cv.html'
         ];
 
         async function loadAllPagesSequentially() {

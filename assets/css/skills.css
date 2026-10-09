@@ -1,0 +1,75 @@
+.skills-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 18px;
+  padding: 7px 0;
+}
+
+.skill-category {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #15171a;
+  margin: 0;
+  flex: 0 0 220px;        /* fixed label width so tags align in a column */
+}
+
+.skill-category i {
+  color: #0d6efd;
+  width: 16px;
+  text-align: center;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  flex: 1;
+}
+
+.skill-tag {
+  font-size: 15px;
+  color: #495057;
+  position: relative;
+  padding-left: 14px;
+}
+
+.skill-tag::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #0d6efd;
+}
+
+/* Stack label above tags on narrow screens */
+@media (max-width: 576px) {
+  .skill-category {
+    flex: 0 0 100%;
+  }
+}
+
+/* Dark mode */
+body.dark-mode .skill-row {
+  border-bottom-color: #333;
+}
+
+body.dark-mode .skill-category {
+  color: #e0e0e0;
+}
+
+body.dark-mode .skill-tag {
+  color: #c0c0c0;
+}

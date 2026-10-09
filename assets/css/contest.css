@@ -1,0 +1,42 @@
+.skill-category a {
+  color: #15171a;
+  text-decoration: none;
+}
+
+.skill-category a:hover {
+  color: #0d6efd;
+}
+
+.skill-category i {
+  font-size: 10px;
+  color: #adb5bd;
+  margin-left: 2px;
+}
+
+.contest-desc {
+  flex: 1;
+  font-size: 15px;
+  color: #495057;
+}
+
+.contest-stat {
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+/* Dark mode */
+body.dark-mode .skill-category a {
+  color: #e0e0e0;
+}
+
+body.dark-mode .skill-category a:hover {
+  color: #90caf9;
+}
+
+body.dark-mode .contest-desc {
+  color: #c0c0c0;
+}
+
+body.dark-mode .contest-stat {
+  color: #90caf9;
+}
