@@ -21,6 +21,21 @@ html {
   transform: scale(1.1);
 }
 
+#scroll-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0%;               /* JS updates this */
+  background: linear-gradient(90deg, #3d8bfd, #0d6efd);
+  transition: width 0.1s ease-out;
+  z-index: 1031;           /* sit above navbar content, Bootstrap's navbar is 1030 */
+}
+
+body.dark-mode #scroll-progress {
+  background: linear-gradient(90deg, #6ea8fe, #3b5bdb);
+}
+
 /* Logo styling */
 #logo-light, #logo-dark {
   height: 40px;
@@ -43,14 +58,80 @@ body.dark-mode #logo-light { display: none; }
   top: 16%;          /* offset from top inside container */
 }
 
-#sidebar img {
-  width: 120px;
-  border-radius: 50%;
-}
-
 #sidebar a {
   color: #0d6efd; /* Bootstrap blue links */
   text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.sidebar-links a:hover {
+  transform: translateY(-3px);
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #e7f1ff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-static {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 6px;
+  font-size: 15px;
+  color: #495057;
+}
+
+.sidebar-static i {
+  width: 18px;
+  text-align: center;
+  color: #0d6efd;
+}
+
+body.dark-mode .sidebar-static {
+  color: #c0c0c0;
+}
+
+body.dark-mode .sidebar-static i {
+  color: #90caf9;
+}
+
+.sidebar-social {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 6px 0;
+}
+
+.sidebar-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f1f3f5;
+  color: #495057;
+  font-size: 16px;
+}
+
+.sidebar-social a:hover {
+  background-color: #e7f1ff;
+  color: #0d6efd;
+}
+
+body.dark-mode .sidebar-social a {
+  background-color: #2a2a2a;
+  color: #c0c0c0;
+}
+
+body.dark-mode .sidebar-social a:hover {
+  background-color: rgba(13, 110, 253, 0.15);
+  color: #90caf9;
 }
 
 #main-content {
@@ -94,6 +175,11 @@ body.dark-mode .navbar a {
 body.dark-mode #sidebar {
   background-color: #1e1e1e;
   color: #e0e0e0;
+}
+
+body.dark-mode .profile-pic {
+  border-color: rgba(13, 110, 253, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
 body.dark-mode #sidebar a {
